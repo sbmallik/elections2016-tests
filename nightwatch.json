@@ -1,0 +1,127 @@
+{
+  "src_folders" : ["./tests"],
+  "output_folder" : "./reports",
+  "custom_commands_path" : "",
+  "page_objects_path" : "./pages",
+  "custom_assertions_path" : "",
+  "globals_path" : "",
+  "live_output" : false,
+  "parallel_process_delay" : 10,
+  "disable_colors": false,
+  "test_workers" : false,
+
+  "selenium" : {
+    "start_process" : true,
+    "server_path" : "./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.53.0.jar",
+    "log_path" : "",
+    "host" : "127.0.0.1",
+    "port" : 4444,
+    "cli_args" : {
+      "webdriver.chrome.driver" : "./node_modules/chromedriver/bin/chromedriver",
+      "webdriver.ie.driver" : "",
+      "webdriver.firefox.profile" : ""
+    }
+  },
+
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://localhost",
+      "selenium_host" : "127.0.0.1",
+      "selenium_port" : 4444,
+      "waitForConditionTimeout" : 90000,
+      "waitForConditionPollInterval" : 500,
+      "silent" : true,
+      "disable_colors": false,
+      "screenshots" : {
+        "enabled" : true,
+        "on_failure" : true,
+        "on_error" : false,
+        "path" : "./screenshots"
+      },
+      "desiredCapabilities" : {
+        "browserName" : "firefox",
+        "javascriptEnabled" : true,
+        "acceptSslCerts" : true
+      }
+    },
+
+    "saucelabs" : {
+      "selenium_host" : "ondemand.saucelabs.com",
+      "selenium_port" : 80,
+      "username" : "${SAUCE_USERNAME}",
+      "access_key" : "${SAUCE_ACCESS_KEY}",
+      "use_ssl" : false,
+      "silent" : true,
+      "output" : true,
+      "screenshots" : {
+        "enabled" : false,
+        "on_failure" : true,
+        "path" : "./screenshots"
+      },
+      "desiredCapabilities": {
+        "name" : "elections2016",
+        "platform": "Windows 8.1",
+        "browserName": "firefox",
+        "version": "46",
+        "screenResolution": "1280x1024"
+      },
+      "globals" : {
+        "myGlobal" : "some_sauce_global"
+      },
+      "selenium" : {
+        "start_process" : false
+      }
+    },
+
+    "chrome" : {
+      "desiredCapabilities" : {
+        "browserName" : "chrome",
+        "javascriptEnabled" : true,
+        "chromeOptions": {
+          "args": ["--no-sandbox"]
+        },
+        "acceptSslCerts" : true
+      }
+    },
+
+    "safari" : {
+      "desiredCapabilities" : {
+        "browserName" : "safari",
+        "javascriptEnabled" : true,
+        "acceptSslCerts" : true
+      }
+    },
+
+    "phantomjs" : {
+      "desiredCapabilities" : {
+        "browserName" : "phantomjs",
+        "javascriptEnabled" : true,
+        "acceptSslCerts" : true,
+        "phantomjs.binary.path" : "/path/to/phantomjs"
+      }
+    },
+
+    "testingbot" : {
+      "selenium_host" : "hub.testingbot.com",
+      "selenium_port" : 80,
+      "apiKey" : "${TB_KEY}",
+      "apiSecret" : "${TB_SECRET}",
+      "silent" : true,
+      "output" : true,
+      "screenshots" : {
+        "enabled" : false,
+        "on_failure" : true,
+        "path" : ""
+      },
+      "desiredCapabilities": {
+        "name" : "test-example",
+        "browserName": "firefox"
+      },
+      "selenium" : {
+        "start_process" : false
+      }
+    }
+  }
+}
+
+
