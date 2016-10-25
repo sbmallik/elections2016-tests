@@ -8,40 +8,45 @@ UI automated testing framework powered by [Node.js](http://nodejs.org/). It uses
 
 #### [Homepage](http://nightwatchjs.org) | [Getting Started](http://nightwatchjs.org/getingstarted) | [Developer Guide](http://nightwatchjs.org/guide) | [API Reference](http://nightwatchjs.org/api) | [Changelog](https://github.com/nightwatchjs/nightwatch/releases)
 
-### Selenium WebDriver standalone server
-Nightwatch works with the Selenium standalone server so the first thing you need to do is download the selenium server jar file `selenium-server-standalone-2.x.x.jar` from the Selenium releases page:
-**https://selenium-release.storage.googleapis.com/index.html**
+### Elections 2016 Integrations test package
+This package contains the set of integrations test that are executed during deployment. The tests use the Nightwatch tool, which is integrated in this repository. This requires the Selenium Standalone server and drivers related to browser. All dependencies are included in this repository.
 
-### Install Nightwatch
+### Install repository
 
 Install Node.js and then:
 ```sh
-$ git clone https://github.com/nightwatchjs/nightwatch.git
-$ cd nightwatch
+$ git clone git@github.com:sbmallik/elections2016-tests.git
+$ cd elections2016-tests
 $ npm install
 ```
 
 ### Run tests
-The tests for Nightwatch are written using [Mocha](http://mochajs.org/) exports interface so they can also be run with Nightwatch itself.
+The tests for Nightwatch uses selenium standalone server irrespective of the browser used. Here are the commands to run the tests for the specific browsers locally:
 
-To run the unit tests using mocha, do:
-
-```sh
-$ npm test
-```
-
-To run the unit tests using Nightwatch, do:
+To run the integration tests useng Firefox (default), do:
 
 ```sh
-$ npm run unit-tests
+$ ./bin/nightwatch
 ```
 
-To check test coverage, run the command:
+To run the integration tests using Chrome, do:
 
 ```sh
-$ npm run mocha-coverage
+$ ./bin/nightwatch -e chrome
 ```
-and then open the generate file _coverage.html_ in your browser.
+
+To run the integration tests using Safari, do:
+
+```sh
+$ ./bin/nightwatch -e safari
+```
+
+To run the tests in Sauce Labs, do:
+
+```sh
+$ ./bin/nightwatch -e saucelabs
+```
+In all cases the output is saved in reports directory.
 
 ### Discuss
 The [Mailing List/Google Group](https://groups.google.com/forum/#!forum/nightwatchjs) is the most appropriate tool for Nightwatch related discussions. In addition, there is a [StackOverflow Nightwatch.js tag](http://stackoverflow.com/questions/tagged/nightwatch.js) at your disposal and [Twitter](https://twitter.com/nightwatchjs).
