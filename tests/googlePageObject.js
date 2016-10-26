@@ -1,5 +1,7 @@
 /* jshint expr: true */
 module.exports = {
+  '@disabled': true,
+  '@tags': ['pageobject'],
   'Demo Google search test using page objects' : function (client) {
     var homePage = client.page.home();
     homePage.navigate();

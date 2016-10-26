@@ -1,7 +1,8 @@
 /* jshint expr: true */
 module.exports = {
-  tags: ['google'],
-  before: function (browser) {
+  '@disabled': true,
+  '@tags': ['google'],
+  'before': function (browser) {
     browser.resizeWindow(1280, 1024);
   },
   'Demo test Google' : function (client) {
