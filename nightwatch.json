@@ -62,8 +62,9 @@
         "name" : "elections2016",
         "platform": "Windows 8.1",
         "browserName": "firefox",
-        "version": "46",
-        "screenResolution": "1280x1024"
+        "version": "47",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
       },
       "globals" : {
         "myGlobal" : "some_sauce_global"
@@ -89,36 +90,6 @@
         "browserName" : "safari",
         "javascriptEnabled" : true,
         "acceptSslCerts" : true
-      }
-    },
-
-    "phantomjs" : {
-      "desiredCapabilities" : {
-        "browserName" : "phantomjs",
-        "javascriptEnabled" : true,
-        "acceptSslCerts" : true,
-        "phantomjs.binary.path" : "/path/to/phantomjs"
-      }
-    },
-
-    "testingbot" : {
-      "selenium_host" : "hub.testingbot.com",
-      "selenium_port" : 80,
-      "apiKey" : "${TB_KEY}",
-      "apiSecret" : "${TB_SECRET}",
-      "silent" : true,
-      "output" : true,
-      "screenshots" : {
-        "enabled" : false,
-        "on_failure" : true,
-        "path" : ""
-      },
-      "desiredCapabilities": {
-        "name" : "test-example",
-        "browserName": "firefox"
-      },
-      "selenium" : {
-        "start_process" : false
       }
     }
   }
