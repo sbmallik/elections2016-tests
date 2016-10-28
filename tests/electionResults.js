@@ -12,7 +12,7 @@ module.exports = {
 
   'Election Results - President': function (client) {
     electionResults.waitForElementVisible('@logo', CONSTANTS.TIMEOUT),
-    electionResults.expect.element('@page_heading').text.to.equal('President Results');
+    electionResults.expect.element('@page_heading').text.to.equal('Presidential Results');
     electionResults.expect.element('@dem_count').text.to.not.equal('0');
     electionResults.expect.element('@rep_count').text.to.not.equal('0');
   },
@@ -39,6 +39,14 @@ module.exports = {
     electionResults.expect.element('@page_heading').text.to.equal('Governor Results');
     electionResults.expect.element('@dem_count').text.to.not.equal('0');
     electionResults.expect.element('@rep_count').text.to.not.equal('0');
+  },
+    
+  'Election Results - Initiatives': function (client) {
+    electionResults.click('@initiatives_link');
+    initiatives = client.page.initiatives();
+    initiatives.waitForElementVisible('@logo', CONSTANTS.TIMEOUT),
+    initiatives.expect.element('@page_heading').text.to.equal('Featured Ballot Initiatives');
+    initiatives.expect.element('@pct_reporting').text.to.not.equal('0% reporting');
   },
 
   'after': function (client) {
