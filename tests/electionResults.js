@@ -13,32 +13,32 @@ module.exports = {
   'Election Results - President': function (client) {
     electionResults.waitForElementVisible('@logo', CONSTANTS.TIMEOUT),
     electionResults.expect.element('@page_heading').text.to.equal('Presidential Results');
-    electionResults.expect.element('@dem_count').text.to.not.equal('0');
-    electionResults.expect.element('@rep_count').text.to.not.equal('0');
+    electionResults.expect.element('@dem_count').text.to.not.equal('');
+    electionResults.expect.element('@rep_count').text.to.not.equal('');
   },
 
   'Election Results - Senate': function (client) {
     electionResults.click('@senate_link');
     electionResults.waitForElementVisible('@logo', CONSTANTS.TIMEOUT),
     electionResults.expect.element('@page_heading').text.to.equal('Senate Results');
-    electionResults.expect.element('@dem_count').text.to.not.equal('0');
-    electionResults.expect.element('@rep_count').text.to.not.equal('0');
+    electionResults.expect.element('@dem_count').text.to.not.equal('');
+    electionResults.expect.element('@rep_count').text.to.not.equal('');
   },
     
   'Election Results - House': function (client) {
     electionResults.click('@house_link');
     electionResults.waitForElementVisible('@logo', CONSTANTS.TIMEOUT),
     electionResults.expect.element('@page_heading').text.to.equal('House Results');
-    electionResults.expect.element('@dem_count').text.to.not.equal('0');
-    electionResults.expect.element('@rep_count').text.to.not.equal('0');
+    electionResults.expect.element('@dem_count').text.to.not.equal('');
+    electionResults.expect.element('@rep_count').text.to.not.equal('');
   },
     
   'Election Results - Governor': function (client) {
     electionResults.click('@governor_link');
     electionResults.waitForElementVisible('@logo', CONSTANTS.TIMEOUT),
     electionResults.expect.element('@page_heading').text.to.equal('Governor Results');
-    electionResults.expect.element('@dem_count').text.to.not.equal('0');
-    electionResults.expect.element('@rep_count').text.to.not.equal('0');
+    electionResults.expect.element('@dem_count').text.to.not.equal('');
+    electionResults.expect.element('@rep_count').text.to.not.equal('');
   },
     
   'Election Results - Initiatives': function (client) {
