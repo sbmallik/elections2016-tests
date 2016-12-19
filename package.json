@@ -25,7 +25,8 @@
     "optimist": ">=0.3.5",
     "proxy-agent": ">=2.0.0",
     "q": "^1.1.2",
-    "selenium-server-standalone-jar": "2.53.0",
+    "selenium-server-standalone-jar": "3.0.1",
+    "geckodriver": "1.2.0",
     "chromedriver": "2.24"
   },
   "devDependencies": {
